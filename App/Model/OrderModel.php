@@ -8,6 +8,7 @@ class OrderModel
     {
         $this->db = Database::connect();
     }
+    
     public function getAllOrders()
     {
         $stmt = $this->db->prepare("SELECT * FROM orders ORDER BY id ASC");
@@ -36,6 +37,4 @@ class OrderModel
     $stmt->execute([$userId]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-   
 }
